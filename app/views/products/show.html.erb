@@ -1,2 +1,10 @@
 <h2><%= @product.name %></h2>
-<%# <%= link_to "Add Products", new_recipe_ingredient_path(@recipe), class:"btn btn-success" %> %>
+<br>
+Please add a description.
+<br>
+
+<%= form_tag("/products/:id", method:"post", class:"form-group") do %>
+<%= label_tag("description:") %>
+<%= text_field_tag(:title) %>
+<%= submit_tag("Add Recipe") %>
+<% end %>

@@ -13,11 +13,14 @@ class ProductsController < ApplicationController
   def create
     name = params[:name]
     product = Product.create!(:name => name)
-    redirect_to '/products' 
+    redirect_to '/product'
   end
 
   def show
     @product = Product.find(params[:id])
     render :show
   end
+
+
+
 end
