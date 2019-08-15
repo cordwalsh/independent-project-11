@@ -1,10 +1,28 @@
-<h2><%= @product.name %></h2>
-<br>
-Please add a description.
-<br>
 
-<%= form_tag("/products/:id", method:"post", class:"form-group") do %>
-<%= label_tag("description:") %>
-<%= text_field_tag(:title) %>
-<%= submit_tag("Add Recipe") %>
+
+
+<h1><%= @project.name %></h1>
+<h3><%= @project.description %></h3>
+
+<% if @project.reviews.any? %>
+  <h4>Here are the reviews for this project:</h4>
+
+  <% @project.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.name, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews are listed for this product.</p>
 <% end %>
+
+<p><%= link_to "Add a review", new_product_review_path(@project) %></p>
+
+<p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p><%= link_to "Delete product", product_path(@product),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to products", products_path %></p>
