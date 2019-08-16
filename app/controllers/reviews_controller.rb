@@ -53,6 +53,4 @@ private
       params.require(:review).permit(:author, :content_body, :rating)
     end
 
-
-
 end

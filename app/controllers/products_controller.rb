@@ -22,9 +22,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # Other controller methods go here.
-
-
   def edit
     @product = Product.find(params[:id])
     render :edit
@@ -54,6 +51,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :cost, :country_of_origin)
   end
-
 
 end
