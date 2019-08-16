@@ -1,5 +1,15 @@
-<h1>Review: <%= @review.author %></h1>
-<h2>Product: <%= @product.name %></h2>
+<h3>Reviewer: <%= @review.author %></h3>
+<br>
+<h4>Product: <%= @product.name %></h4>
+<br>
+<h5>Rating: <%= @review.rating %></h5>
+<br>
+
+<p><%= @review.content_body %></p>
+<br>
+<br>
+
+
 
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>

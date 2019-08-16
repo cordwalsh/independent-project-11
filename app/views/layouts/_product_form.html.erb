@@ -3,12 +3,16 @@
 <%= form_for @product do |p| %>
   <%= p.label :name %>
   <%= p.text_field :name %>
+  <br>
   <%= p.label :description %>
   <%= p.text_field :description %>
-  <%= p.submit %>
+  <br>
   <%= p.label :cost %>
   <%= p.text_field :cost %>
+  <br>
   <%= p.label :country_of_origin %>
   <%= p.text_field :country_of_origin %>
+  <br>
+  <br>
   <%= p.submit %>
 <% end %>
