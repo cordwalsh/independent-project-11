@@ -8,11 +8,3 @@ require 'faker'
     :country_of_origin => Faker::Address.country
   )
 end
-
-250.times do
-  review = Review.create!(
-    :author => Faker::Name.name,
-    :content_body =>
-    :rating =>
-  )
-end

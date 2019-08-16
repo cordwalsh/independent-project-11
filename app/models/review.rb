@@ -1,5 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :product
+  validates_presence_of :product_id
+
   validates :author, presence: true
   validates :rating, presence: true
   validates :content_body, presence: true
