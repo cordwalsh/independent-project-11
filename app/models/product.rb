@@ -15,7 +15,7 @@ class Product < ApplicationRecord
      .joins(:reviews)
      .group("products.id")
      .order("reviews_count DESC")
-     .limit(1)
+     .limit(3)
      )}
 
    before_save(:titleize_product)
