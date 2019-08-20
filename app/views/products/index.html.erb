@@ -6,14 +6,53 @@
 <br>
 <br>
 <div class="picture">
-
-<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/4ddabef1-8390-424a-a828-f61e4df3d499/daraj8q-aa71d933-f07d-4901-b0dc-a8982be740ad.gif" alt="">
+  <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/4ddabef1-8390-424a-a828-f61e4df3d499/daraj8q-aa71d933-f07d-4901-b0dc-a8982be740ad.gif" alt="">
 </div>
 
 <div class="container">
+  <h3> Highest Reviewed Product </h3>
 
+  <% if @products.most_reviews.any? %>
+  <ul>
+    <%@products.most_reviews.each do |product| %>
+    <li><%=link_to product.name, product_path(product)%></li>
+    <%end%>
+  </ul>
+  <%else%>
+  <p>No reviews at all.</p>
+  <%end%>
+</div>
 
-<h1>Products</h1>
+<div class="container">
+  <h3> Recent Products </h3>
+
+  <% if @products.most_recent.any? %>
+  <ul>
+    <%@products.most_recent.each do |product| %>
+    <li><%=link_to product.name, product_path(product)%></li>
+    <%end%>
+  </ul>
+  <%else%>
+  <p>No Products.</p>
+  <%end%>
+</div>
+
+<div class="container">
+  <h3> USA products </h3>
+
+  <% if @products.local.any? %>
+  <ul>
+    <%@products.local.each do |product| %>
+    <li><%=link_to product.name, product_path(product)%></li>
+    <%end%>
+  </ul>
+  <%else%>
+  <p>No current products made in USA.</p>
+  <%end%>
+</div>
+
+<div class="container">
+<h1>All Products</h1>
 
 <% if @products.any? %>
   <ul>
@@ -24,7 +63,6 @@
 <% else %>
   <p>There are no products yet. Hop in the pipe and roll one up.</p>
 <% end %>
-
 
 <p><%= link_to "Roll one up", new_product_path %></p>
 </div>

@@ -11,7 +11,6 @@ Review.destroy_all
     :country_of_origin => Faker::Address.country
   )
   50.times do
-    product.reviews.create!(:author => Faker::Name.name, :content_body => Faker::Coffee.notes, :rating => rand(1..5), :product_id => product.id
-)
+    product.reviews.create!(:author => Faker::Name.name, :content_body => Faker::Coffee.notes, :rating => rand(1..5), :product_id => product.id)
   end
 end
